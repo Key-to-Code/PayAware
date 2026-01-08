@@ -20,7 +20,6 @@ import {
 } from '@/components/ui/sheet'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Separator } from '@/components/ui/separator'
-import { ModeToggle } from '@/components/mode-toggle'
 import { signOut } from './sidebar-actions'
 
 interface SidebarProps {
@@ -67,8 +66,8 @@ export function Sidebar({ userEmail, userAvatarUrl }: SidebarProps) {
                                         href={item.href}
                                         onClick={() => setOpen(false)}
                                         className={`flex items-center gap-3 px-3 py-2 rounded-md transition-colors ${isActive
-                                                ? 'bg-primary/10 text-primary font-medium'
-                                                : 'text-muted-foreground hover:bg-muted hover:text-foreground'
+                                            ? 'bg-primary/10 text-primary font-medium'
+                                            : 'text-muted-foreground hover:bg-muted hover:text-foreground'
                                             }`}
                                     >
                                         <Icon className="h-5 w-5" />
@@ -86,7 +85,6 @@ export function Sidebar({ userEmail, userAvatarUrl }: SidebarProps) {
                                 <div className="flex-1 min-w-0">
                                     <p className="text-sm font-medium truncate">{userEmail}</p>
                                 </div>
-                                <ModeToggle />
                             </div>
                             <form action={signOut}>
                                 <Button variant="outline" className="w-full justify-start text-red-600 hover:text-red-700 hover:bg-red-50 dark:hover:bg-red-950/20">
@@ -117,8 +115,8 @@ export function Sidebar({ userEmail, userAvatarUrl }: SidebarProps) {
                                 key={item.href}
                                 href={item.href}
                                 className={`flex items-center gap-3 px-3 py-2 rounded-md transition-colors ${isActive
-                                        ? 'bg-primary/10 text-primary font-medium'
-                                        : 'text-muted-foreground hover:bg-muted hover:text-foreground'
+                                    ? 'bg-primary/10 text-primary font-medium'
+                                    : 'text-muted-foreground hover:bg-muted hover:text-foreground'
                                     }`}
                             >
                                 <Icon className="h-5 w-5" />
@@ -135,9 +133,6 @@ export function Sidebar({ userEmail, userAvatarUrl }: SidebarProps) {
                         </Avatar>
                         <div className="flex-1 min-w-0">
                             <p className="text-sm font-medium truncate" title={userEmail}>{userEmail}</p>
-                        </div>
-                        <div className="scale-75 origin-right">
-                            <ModeToggle />
                         </div>
                     </div>
                     <form action={signOut}>

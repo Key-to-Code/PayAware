@@ -7,8 +7,6 @@ import { AlertCircle, TrendingUp, TrendingDown, Wallet, ArrowUpRight, ArrowDownR
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { ModeToggle } from '@/components/mode-toggle'
 import { Badge } from '@/components/ui/badge'
-import VoiceExpenseLogger from '@/components/ui/VoiceExpenseLogger'
-import { createClient } from '@/lib/supabase/server'
 
 export default async function DashboardPage() {
     const supabase = await createClient()
@@ -28,11 +26,7 @@ export default async function DashboardPage() {
                         Manage your personal finances efficiently.
                     </p>
                 </div>
-                <div className="flex items-center gap-3">
-                    <Badge variant="secondary" className="bg-yellow-100 text-yellow-800 dark:bg-yellow-900/40 dark:text-yellow-200 border-yellow-200 dark:border-yellow-800">
-                        User-Estimated Data
-                    </Badge>
-                </div>
+                <ModeToggle />
             </div>
 
             {/* KPI Cards */}
