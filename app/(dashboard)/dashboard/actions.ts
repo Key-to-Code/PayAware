@@ -33,6 +33,14 @@ export async function addTransaction(formData: FormData) {
         return { error: 'Invalid fields' }
     }
 
+    // Check if expense would make balance negative
+    if (validatedFields.data.type === 'expense') {
+        const { balance } = await getBalance()
+        if (balance - validatedFields.data.amount < 0) {
+            return { error: 'Not enough funds' }
+        }
+    }
+
     const { error } = await supabase.from('transactions').insert({
         user_id: user.id,
         ...validatedFields.data,

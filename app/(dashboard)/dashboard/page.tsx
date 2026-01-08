@@ -6,7 +6,6 @@ import { formatCurrency } from '@/lib/utils/format'
 import { AlertCircle, TrendingUp, TrendingDown, Wallet, ArrowUpRight, ArrowDownRight, Activity } from 'lucide-react'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { ModeToggle } from '@/components/mode-toggle'
-import { Badge } from '@/components/ui/badge'
 
 export default async function DashboardPage() {
     const { balance, income, expense } = await getBalance()
@@ -24,11 +23,7 @@ export default async function DashboardPage() {
                         Manage your personal finances efficiently.
                     </p>
                 </div>
-                <div className="flex items-center gap-3">
-                    <Badge variant="secondary" className="bg-yellow-100 text-yellow-800 dark:bg-yellow-900/40 dark:text-yellow-200 border-yellow-200 dark:border-yellow-800">
-                        User-Estimated Data
-                    </Badge>
-                </div>
+                <ModeToggle />
             </div>
 
             {/* KPI Cards */}
